@@ -1,2 +1,10 @@
-<h1>Questions#new</h1>
-<p>Find me in app/views/questions/new.html.erb</p>
+<h1>Add a question</h1>
+
+<%= form_tag survey_questions_path, method: :post do %>
+  <%= text_field(:question, :name) %>
+  <%= text_field_tag (:value1) %>
+  <%= text_field_tag (:value2) %>
+  <%= text_field_tag (:value3) %>
+  <%= text_field_tag (:value4) %>
+  <%= submit_tag %>
+<% end %>
