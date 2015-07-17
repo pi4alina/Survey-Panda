@@ -1,8 +1,11 @@
 class QuestionsController < ApplicationController
-  def create
+  def new
+    @survey = Survey.find_by(id: params[:survey_id])
+    @question = Question.new
   end
 
-  def new
+  def create
+    question = Question.new(question_params)
   end
 
   def edit
@@ -12,5 +15,10 @@ class QuestionsController < ApplicationController
   end
 
   def destroy
+  end
+
+  private
+  def question_params
+    params.require(:question).permit(:name, :possible_values)
   end
 end
