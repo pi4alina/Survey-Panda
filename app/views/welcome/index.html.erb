@@ -1,13 +1,19 @@
 <%if flash[:notice]%>
  <%=flash[:notice]%>
+<%elsif flash [:error]%>
+ <%=flash[:error]%>
 <%end%>
 
 <%if session[:user_id]%>
   <%=button_to 'Log Out', logout_path, method: :delete%>
 <%else%>
-  <%=button_to 'Log In', login_path, method: :get%>
-  <%=button_to 'Sign Up', signup_path, method: :get%>
+  <%=button_to 'Log In', login_path, form_class: "login", method: :get%>
+  <%=button_to 'Sign Up', signup_path, form_class: "signup", method: :get%>
 <%end%>
+
+<div id ="forms">
+</div>
+
 <h2>Welcome to Survey Panda</h2>
 
 <img src="http://i.imgur.com/VFjy4.gif">

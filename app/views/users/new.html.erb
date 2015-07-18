@@ -1,7 +1,4 @@
-<%if flash[:error]%>
- <%=flash[:error]%>
-<%end%>
-
+<h3>Create an account!</h3>
 <%=form_for @user do |f|%>
   <%=f.label :username%>
   <%=f.text_field :username%>

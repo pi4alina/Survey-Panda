@@ -11,7 +11,7 @@ class UsersController < ApplicationController
       redirect_to root_path
     else
       flash[:error] = "Password must be between 6 and 15 characters long."
-      redirect_to signup_path
+      redirect_to root_path
     end
   end
 
