@@ -8,7 +8,7 @@ class QuestionsController < ApplicationController
     question = Question.new(question_params,)
     possible_vals_string = Question.possible_values_to_string(params[:possible_values])
     question.possible_values = possible_vals_string
-
+    question.survey_id = params[:survey_id]
     if question.save
       redirect_to new_survey_question_path
     else
