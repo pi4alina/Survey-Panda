@@ -1,0 +1,15 @@
+<%question_choices = question.possible_values.split%>
+
+<%=form_for @response do |f|%>
+  <ol>
+  <%question_choices.each do |choice|%>
+  <li><%=f.hidden_field :question_id, value: question.id%>
+      <%=f.radio_button :content, choice%>
+      <%=f.label :content, choice, value: choice%>
+  </li>
+  <%end%>
+  </ol>
+  <%=f.submit "Answer"%>
+<%end%>
+
+
