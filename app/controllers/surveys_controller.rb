@@ -19,6 +19,11 @@ class SurveysController < ApplicationController
   def show
     @survey = Survey.find_by(id: params[:id])
   end
+
+	def destroy
+		Survey.find_by(id: params[:id]).destroy
+		redirect_to :root
+	end
   
   private
   
