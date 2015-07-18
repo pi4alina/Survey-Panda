@@ -2,9 +2,8 @@
 
 <%= form_tag survey_questions_path, method: :post do %>
   <%= text_field(:question, :name) %>
-  <%= text_field_tag (:value1) %>
-  <%= text_field_tag (:value2) %>
-  <%= text_field_tag (:value3) %>
-  <%= text_field_tag (:value4) %>
+  <%= text_field_tag 'possible_values[]' %>
+  <%= text_field_tag 'possible_values[]' %>
+  <%= text_field_tag 'possible_values[]' %>
   <%= submit_tag %>
 <% end %>

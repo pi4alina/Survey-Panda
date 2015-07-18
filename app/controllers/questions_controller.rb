@@ -5,7 +5,14 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    question = Question.new(question_params)
+    question = Question.new(question_params,)
+    possible_vals_string = Question.possible_values_to_string(params[:possible_values])
+    question.possible_values = possible_vals_string
+
+    if question.save
+      redirect_to new_survey_question_path
+    else
+    end
   end
 
   def edit

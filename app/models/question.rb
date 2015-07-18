@@ -3,11 +3,11 @@ class Question < ActiveRecord::Base
   has_many :responses
   validates :name, presence: true
 
-  def possible_values_to_string(value_array)
+  def self.possible_values_to_string(value_array)
     value_array.join(",")
   end
 
-  def possible_values_to_array(value_string)
-    value_string.split(",").map(&:strip)
+  def possible_values_to_array
+    self.possible_values.split(",").map(&:strip)
   end
 end
