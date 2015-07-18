@@ -1,5 +1,11 @@
 <h2><%=@username%>'s profile page</h2>
 
 <h4>List of <%=@username%>'s created surveys:</h4>
+<% @surveys.each do |survey|%>
+  <%=link_to survey.title, survey_path(survey)%>
+<%end%>
 
 <h4>List of <%=@username%>'s taken surveys:</h4>
+<% @taken_surveys.each do |taken_survey|%>
+  <%=taken_survey.survey.title%>
+<%end%>
