@@ -1,0 +1,19 @@
+@import 'main';
+
+nav {
+  background-color: $dark-color;
+  width:100%;
+  padding:5px;
+  display:flex;
+  color:$background-color;
+
+  .right {
+    float:right;
+  }
+}
+
+nav:after{
+  clear:both;
+  content:'';
+  display:block;
+}
