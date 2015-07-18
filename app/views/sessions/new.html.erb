@@ -1,7 +1,13 @@
-<%=form_for(:session, url: login_path) do |f|%>
-  <%=f.label :username%>
-  <%=f.text_field :username%>
-  <%=f.label :password%>
-  <%=f.password_field :password%>
-  <%=f.submit "Log In"%>
-<%end%>
+<div class="login_form">
+  <%=form_for(:session, url: login_path) do |f|%>
+  <div class="username">
+    <%=f.label :username%>
+    <%=f.text_field :username%>
+  </div>
+  <div class="password">
+    <%=f.label :password%>
+    <%=f.password_field :password%>
+  </div>
+    <%=f.submit "Log In"%>
+  <%end%>
+</div>

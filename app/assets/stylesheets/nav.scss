@@ -1,0 +1,55 @@
+@import 'main';
+
+
+nav {
+  background-color: $almost-black-transparent;
+  padding:5px 20px;
+  display:flex;
+  color:$background-color;
+
+  .left {
+    float:left;
+    width:auto;
+  }
+
+  .right {
+    width:auto;
+    float:right;
+    display:flex;
+
+    div {
+      padding:5px;
+    }
+
+    form input[type=submit]{
+      color:$almost-black;
+      border:1px solid $almost-black;
+    }
+  }
+}
+
+a.home {
+  font-family: $logo-font;
+  text-transform: uppercase;
+  font-weight:bold;
+  color:$accent-color;
+  font-size:1.75em;
+  opacity:1;
+}
+
+nav#welcome {
+  background-color: transparent;
+    a.home {
+    text-shadow: 5px 5px $almost-black-transparent;
+    font-size:6em;
+    position:absolute;
+    left:60%;
+    top:25%;
+  }
+}
+
+nav:after{
+  clear:both;
+  content:'';
+  display:block;
+}
