@@ -2,12 +2,13 @@
 @import 'base/globals.scss';
 
 @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(http://fonts.googleapis.com/css?family=Chelsea+Market);
 
 body {
   display:flex;
   justify-content: center;
   font-family: 'Montserrat', sans-serif;
-
+  font-size:13px
 }
 
 #container {
@@ -18,4 +19,8 @@ body {
 #content {
   width:75%;
   padding:10px;
+}
+
+a {
+  text-decoration: none;
 }
