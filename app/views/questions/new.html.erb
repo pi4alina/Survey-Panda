@@ -1,2 +1,19 @@
-<h1>Questions#new</h1>
-<p>Find me in app/views/questions/new.html.erb</p>
+<h1>Add a question</h1>
+
+<% flash.each do |key, value| %>
+  <div class="flash <%= key %>"><%= value %></div>
+<% end %>
+
+<%= form_tag survey_questions_path, method: :post do %>
+  <div class='question'>
+    <%= label_tag 'Question'%>
+    <%= text_field(:question, :name) %>
+  </div>
+  <div class='question possible_values'>
+  <%= label_tag 'Possible Values'%>
+    <%= text_field_tag 'possible_values[]' %>
+    <%= text_field_tag 'possible_values[]' %>
+    <%= text_field_tag 'possible_values[]' %>
+  </div>
+  <%= submit_tag 'Add Question' %>
+<% end %>

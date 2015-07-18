@@ -1,2 +1,19 @@
-<h1>Questions#edit</h1>
-<p>Find me in app/views/questions/edit.html.erb</p>
+<h1>Edit question</h1>
+
+<% flash.each do |key, value| %>
+  <div class="flash <%= key %>"><%= value %></div>
+<% end %>
+
+<%= form_tag survey_question_path(@survey, @question), method: :put do %>
+  <div class='question'>
+    <%= label_tag 'Question'%>
+    <%= text_field(:question, :name) %>
+  </div>
+  <div class='question possible_values'>
+  <%= label_tag 'Possible Values'%>
+    <% @possible_values.each do |val| %>
+    <%= text_field_tag 'possible_values[]', val %>
+    <% end %>
+  </div>
+  <%= submit_tag 'Edit Question' %>
+<% end %>

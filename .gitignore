@@ -13,3 +13,4 @@
 /tmp
 /db/schema.rb
 .DS_Store
+Gemfile.lock
