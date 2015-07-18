@@ -11,7 +11,7 @@ class ResponsesController < ApplicationController
     response = Response.new(response_params)
     response.question_id = params[:response][:question_id]
     response.save!
-    render nothing: true
+    redirect_to question_path(#id + 1 or something)
   end
 
   private
