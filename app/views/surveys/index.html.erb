@@ -1,7 +1,7 @@
-<%= link_to "Create you own survey" new_survey_path %>
+<%= link_to "Create you own survey", new_survey_path %>
 
 <h2>Here are the surveys you can take: </h2>
 
 <% @surveys.each do |survey| %>
-  <div><%= link_to survey.title survey_path(survey)%>  by<%= survey.author.username %></div>
+  <div><%= link_to survey.title, survey_path(survey)%>  by<%= survey.author.username %></div>
 <% end %>
