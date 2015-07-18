@@ -26,7 +26,6 @@ class QuestionsController < ApplicationController
     update_possible_values(question, params[:possible_values])
 
     if question.save
-    byebug
       redirect_to survey_question_path(question.survey, question)
     else
     end
