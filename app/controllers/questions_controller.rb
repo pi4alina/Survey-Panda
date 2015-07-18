@@ -12,9 +12,11 @@ class QuestionsController < ApplicationController
     question.survey_id = params[:survey_id]
     update_possible_values(question, params[:possible_values])
     if question.save
-      redirect_to new_survey_question_path
+      flash[:success] = "Your question '#{question.name}' was successfully added!"
     else
+      flash[:error] = "There was an error adding your question"
     end
+    redirect_to new_survey_question_path
   end
 
   def edit
@@ -29,19 +31,22 @@ class QuestionsController < ApplicationController
     update_possible_values(question, params[:possible_values])
 
     if question.save
-      redirect_to survey_question_path(question.survey, question)
+      flash[:success] = "Question updated!"
     else
+      flash[:error] = "There was an error editing your question"
     end
+      redirect_to survey_question_path(question.survey, question)
   end
 
   def destroy
     question = Question.find_by(id: params[:id])
     survey = question.survey
     if question.destroy
-      redirect_to survey_path(survey)
+      flash[:success] = "Question deleted!"
     else 
-
+      flash[:error] = "There was an error deleting your question"
     end
+      redirect_to survey_path(survey)
   end
 
   private
