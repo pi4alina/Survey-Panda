@@ -1,4 +1,5 @@
 $(document).ready(function(){
+  $(".new_question_button").hide();
   $(".new_survey").on('submit', function(event){
     event.preventDefault();
     var $target = $(event.target)
@@ -9,6 +10,7 @@ $(document).ready(function(){
     })
     .done(function(surveyPartial){
       $("#new_survey_div").html(surveyPartial);
+      $(".new_question_button").show();
     })
     .fail(function(error){
       console.log(error, "fail panda")

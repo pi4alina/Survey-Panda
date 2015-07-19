@@ -3,7 +3,7 @@
     <div class="flash <%= key %>"><%= value %></div>
   <% end %>
 
-  <%= form_tag survey_questions_path, method: :post do %>
+  <%= form_tag survey_questions_path, class: "new_question_form", method: :post do %>
     <div class='question'>
       <%= label_tag 'Question'%>
       <%= text_field(:question, :name) %>

@@ -1,0 +1,9 @@
+<% @survey.questions.each do |question| %>
+	<%= question.name %>
+	<ul>
+	<% question.possible_values_to_array.each do |choice| %>
+		<li><%= choice %></li>
+	<% end %>
+	</ul>
+	<%= link_to "Edit this question", edit_survey_question_path(@survey, question)%><br><br>
+<% end %>

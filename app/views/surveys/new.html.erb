@@ -6,4 +6,9 @@
   <%= f.text_area :description %>
   <%= f.submit "Create Survey"%>
 <% end %>
+</div><br>
+
+<div id = "questions_div">
 </div>
+
+<%=button_to 'New Question', new_survey_question_path(survey_id: @survey_id), form_class: "new_question_button", method: :get%>
