@@ -29,6 +29,10 @@ class SurveysController < ApplicationController
 		Survey.find_by(id: params[:id]).destroy
 		redirect_to :root
 	end
+
+	def result
+		@survey = Survey.find_by(id: params[:id])
+	end
   
   private
   
