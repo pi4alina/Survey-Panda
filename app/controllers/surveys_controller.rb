@@ -10,7 +10,7 @@ class SurveysController < ApplicationController
   def create
     @survey = Survey.new(survey_params)
     if @survey.save
-      redirect_to new_survey_question_path
+      redirect_to new_survey_question_path(@survey)
     else
       flash.now[:error] = @survey.errors.full_messages
     end
