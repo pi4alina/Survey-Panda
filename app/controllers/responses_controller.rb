@@ -12,7 +12,7 @@ class ResponsesController < ApplicationController
         redirect_to survey_question_path(next_question.survey, next_question)
       else
 				question = Question.find_by(id: params[:question_id])
-				current_user.taken_surveys << Survey.find_by(id: question.survey)	
+				current_user.taken_surveys.create(survey_id: question.survey_id, taker_id: current_user.id)	
         redirect_to root_path, layout: false
       end
     end
