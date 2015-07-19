@@ -8,7 +8,6 @@ $(document).ready(function (){
       method: $target[0].method, 
       data: $target.serialize()
     }).done(function(question){
-      console.log(question);
       $('.question').replaceWith(question);
     }).fail(function(error){ 
       console.log(error, "fail");
