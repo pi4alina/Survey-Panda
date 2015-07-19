@@ -13,8 +13,6 @@ class ResponsesController < ApplicationController
       else
         redirect_to root_path, layout: false
       end
-    else
-      byebug
     end
   end
 
