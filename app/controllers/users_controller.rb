@@ -8,7 +8,8 @@ class UsersController < ApplicationController
     user = User.new(user_params)
     if user.save
       flash[:notice] = "You have successfully signed up!"
-      redirect_to root_path
+      session[:user_id] = user.id 
+      redirect_to surveys_path
     else
       flash[:error] = "Password must be between 6 and 15 characters long."
       redirect_to root_path
