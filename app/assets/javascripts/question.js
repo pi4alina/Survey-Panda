@@ -8,11 +8,12 @@ $(document).ready(function(){
   	})
   	.done(function(questionForm){
   		$(".new_question_button").toggle(false);
-  		$("#questions_div").append(questionForm);
+  		$("#questions_div").html(questionForm);
   	})
   	.fail(function(error){
   		console.log(error, "sad panda")
   	})
+  })
   	$("body").on("submit", ".new_question_form", function(event){
   		event.preventDefault();
   	  var $target = $(event.target);
@@ -22,13 +23,13 @@ $(document).ready(function(){
   	  	data: $target.serialize()
   	  })
   	  .done(function(questionPartial){
-  	  	$("#content").prepend(questionPartial);
+  	  	console.log(questionPartial)
+  	  	$("#content").append(questionPartial);
   	  	$(".new_question_form").remove();
-  	  	$(".new_question_button").toggle(true);
+  	  	$(".new_question_button").toggle(true)
   	  })
   	  .fail(function(error){
   	  	console.log(error, "fail panda")
   	  })
-  	})
   })
 })

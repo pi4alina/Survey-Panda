@@ -6,17 +6,12 @@ class SurveysController < ApplicationController
   def new
     @survey = Survey.new
     @survey_id = session[:survey_id] ||= 1
-    p session[:survey_id]
-    p "*****"
-    p @survey_id
-    p "*****"
   end
   
   def create
     @survey = Survey.new(survey_params)
     if @survey.save
       session[:survey_id] = @survey.id
-      p session[:survey_id]
       request.xhr? ? render(partial: 'survey', object: @survey, layout: false) : redirect_to(@survey)
     else
       flash.now[:error] = @survey.errors.full_messages

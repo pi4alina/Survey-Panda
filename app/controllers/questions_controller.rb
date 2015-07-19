@@ -14,7 +14,8 @@ class QuestionsController < ApplicationController
     @survey = Survey.find_by(id: question.survey_id)
     update_possible_values(question, params[:possible_values])
     if question.save
-      request.xhr? ? render(partial: 'question', object: @survey, layout: false) : redirect_to(@survey)
+      @last_question = @survey.questions.last
+      request.xhr? ? render(partial: 'question', locals: {question: @last_question, survey: @survey}, layout: false) : redirect_to(@survey)
       flash[:success] = "Your question '#{question.name}' was successfully added!"
     else
       flash[:error] = "There was an error adding your question"
