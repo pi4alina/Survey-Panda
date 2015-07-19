@@ -10,9 +10,8 @@
 		<% end %>
 		</ul>
 		<%= link_to "Edit this question", edit_survey_question_path(@survey, question)%>
-<% else %>
-	<%= link_to "Start this survey", url: '/surveys/<= @survey.id>/questions/<%= @survey.questions.first.id%>'%>
 	<% end %>
-
 	<div><%= link_to "Delete this survey", @survey, method: :delete%></div>
+<% else %>
+	<%= link_to "Start this survey", url: '/surveys/#{@survey.id}/questions/#{@survey.questions.first.id}'%>
 <% end %>
