@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :users, only: [:create, :show]
   resources :surveys do
-    resources :questions, except: [:index, :show]
+    resources :questions, except: [:index]
   end
   resources :responses, only: [:new, :create]
   get '/signup' => 'users#new'
