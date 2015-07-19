@@ -2,8 +2,6 @@
 @import 'base/globals.scss';
 @import 'base/fonts.scss';
 
-
-
 body {
   font-family: $main-font;
   font-size:13px
@@ -24,4 +22,25 @@ body {
 a {
   text-decoration: none;
   color: $link-color;
+}
+
+input[type='submit'] {
+  background-color:$accent-color;
+  border:0;
+
+  &:hover {
+    background-color: $link-color;
+  }
+}
+
+.flash {
+  display:block;
+}
+
+.notice {
+
+}
+
+.errors {
+
 }
