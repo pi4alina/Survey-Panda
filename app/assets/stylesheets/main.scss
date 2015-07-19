@@ -33,16 +33,19 @@ input[type='submit'] {
   }
 }
 
-.flash {
+.flash div{
   display:block;
+  font-weight:900;
 }
 
 .notice {
-
+  background-color: $success-background;
+  color:$success-text;
+  padding:10px;
 }
 
-.errors {
-    background-color: $danger-background;
-    color:$danger-text;
-    font-weight:900;
+.error {
+  background-color: $danger-background;
+  color:$danger-text;
+  padding:10px;
 }

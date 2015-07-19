@@ -1,6 +1,10 @@
 <nav>
 <div class="left">
-<%= link_to "Survey Panda", root_path, class: "home" %>
+<% if session[:user_id]%>
+  <%= link_to "Survey Panda", surveys_path, class: "home" %>
+  <% else %>
+  <%= link_to "Survey Panda", root_path, class: "home" %>
+<% end %>
 </div>
 <div class="right">
 

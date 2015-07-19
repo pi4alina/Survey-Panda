@@ -1,7 +1,5 @@
 <h1>Edit question</h1>
 
-<%=render 'flash'%>
-
 <%= form_tag survey_question_path(@survey, @question), method: :put do %>
   <div class='question'>
     <%= label_tag 'Question'%>
