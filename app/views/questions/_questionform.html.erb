@@ -1,7 +1,5 @@
 <div id= "new_question_div">
-  <% flash.each do |key, value| %>
-    <div class="flash <%= key %>"><%= value %></div>
-  <% end %>
+  <%=render 'flash'%>
 
   <%= form_tag survey_questions_path, class: "new_question_form", method: :post do %>
     <div class='question'>

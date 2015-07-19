@@ -1,6 +1,4 @@
-<%if flash[:error]%>
-  <%=flash[:error]%>
-<%end%>
+<%=render 'flash'%>
 
 <div id = "new_survey_div">
 <%= form_for @survey do |f|%>

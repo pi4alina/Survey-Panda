@@ -1,9 +1,4 @@
-<%if flash[:notice]%>
- <%=flash[:notice]%>
- <%end%>
-<%if flash[:error]%>
- <%=flash[:error]%>
-<%end%>
+<%=render 'flash'%>
 
 <%if session[:user_id]%>
   <%=button_to 'Log Out', logout_path, method: :delete%>
