@@ -1,3 +1,7 @@
+<%if flash[:error]%>
+  <%=flash[:error]%>
+<%end%>
+
 <div id = "new_survey_div">
 <%= form_for @survey do |f|%>
   <%= f.label :title%>
