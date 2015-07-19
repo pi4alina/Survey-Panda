@@ -5,18 +5,22 @@ class QuestionsController < ApplicationController
   def new
     @survey = Survey.find_by(id: params[:survey_id])
     @question = Question.new
+    render partial: 'questionform', layout: false
   end
 
   def create
     question = Question.new(question_params)
-    question.survey_id = params[:survey_id]
+    question.survey_id = session[:survey_id]
+    @survey = Survey.find_by(id: question.survey_id)
     update_possible_values(question, params[:possible_values])
     if question.save
+      @last_question = @survey.questions.last
+      request.xhr? ? render(partial: 'newquestion', locals: {question: @last_question, survey: @survey}, layout: false) : redirect_to(@survey)
       flash[:success] = "Your question '#{question.name}' was successfully added!"
     else
       flash[:error] = "There was an error adding your question"
+      redirect_to new_survey_path
     end
-    redirect_to new_survey_question_path
   end
 
   def show 

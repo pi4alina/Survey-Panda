@@ -1,7 +1,21 @@
+<%if flash[:error]%>
+  <%=flash[:error]%>
+<%end%>
+
+<div id = "new_survey_div">
 <%= form_for @survey do |f|%>
   <%= f.label :title%>
   <%= f.text_field :title %>
   <%= f.label :description %>
   <%= f.text_area :description %>
-  <%= f.submit "Add questions to your survey"%>
+  <%= f.submit "Create Survey"%>
 <% end %>
+</div><br>
+
+<div id = "questions_div">
+</div>
+
+<%=button_to 'New Question', new_survey_question_path(survey_id: @survey_id), form_class: "new_question_button", method: :get%>
+<div id = "finished">
+<%=button_to 'Finished?', user_path(@user), method: :get%>
+</div>

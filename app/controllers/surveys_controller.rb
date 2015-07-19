@@ -4,15 +4,20 @@ class SurveysController < ApplicationController
   end
   
   def new
+    @user = User.find_by(id: session[:user_id])
     @survey = Survey.new
+    @survey_id = session[:survey_id] ||= 1
   end
   
   def create
     @survey = Survey.new(survey_params)
     if @survey.save
-      redirect_to new_survey_question_path(@survey)
+      session[:survey_id] = @survey.id
+      request.xhr? ? render(partial: 'survey', object: @survey, layout: false) : redirect_to(@survey)
     else
-      flash.now[:error] = @survey.errors.full_messages
+      # flash.now[:error] = @survey.errors.full_messages
+      flash[:error] = "Title required"
+      redirect_to new_survey_path
     end
   end 
   
