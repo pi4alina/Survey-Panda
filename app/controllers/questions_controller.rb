@@ -19,6 +19,15 @@ class QuestionsController < ApplicationController
     redirect_to new_survey_question_path
   end
 
+  def show 
+    @question = Question.find_by(id: params[:id])
+    @survey = @question.survey
+    if request.xhr?
+      @next_question = @question.next
+      render @question, layout: false, locals: {next_question: @next_question}
+    end
+  end
+
   def edit
     @question = Question.find_by(id: params[:id])
     @survey = @question.survey
