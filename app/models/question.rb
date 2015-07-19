@@ -14,4 +14,8 @@ class Question < ActiveRecord::Base
   def next  
     survey.questions.where("id > ?", id).first
   end
+
+	def percentage(choice)
+		(self.responses.where(content: choice).count / self.responses.count * 100).to_s + "%"
+	end
 end

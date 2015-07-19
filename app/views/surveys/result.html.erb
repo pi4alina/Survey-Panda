@@ -1,0 +1,8 @@
+<% @survey.questions.each do |question| %>
+	<ol><%= question.name %>
+	<% question.possible_values_to_array.each do |choice|%>
+		<li><%= choice %>   <%= question.percentage(choice)%> people chose this answer</li>
+	<% end %>
+	</ol>
+<% end %>
+

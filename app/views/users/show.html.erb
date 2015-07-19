@@ -3,13 +3,13 @@
 <h4>List of <%=@username%>'s created surveys:</h4>
 <ol>
 <% @surveys.each do |survey|%>
-  <li><%=link_to survey.title, survey_path(survey)%></li>
+  <li><%=link_to survey.title, survey_result_path(survey)%></li>
 <%end%>
 </ol>
 
 <h4>List of <%=@username%>'s taken surveys:</h4>
 <ol>
 <% @taken_surveys.each do |taken_survey|%>
-  <li><%=taken_survey.survey.title%></li>
+  <li><%= taken_survey.survey.title%></li>
 <%end%>
 </ol>
