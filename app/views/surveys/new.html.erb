@@ -1,7 +1,9 @@
+<div id = "new_survey_div">
 <%= form_for @survey do |f|%>
   <%= f.label :title%>
   <%= f.text_field :title %>
   <%= f.label :description %>
   <%= f.text_area :description %>
-  <%= f.submit "Add questions to your survey"%>
+  <%= f.submit "Create Survey"%>
 <% end %>
+</div>
