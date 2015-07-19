@@ -12,3 +12,6 @@
 </div>
 
 <%=button_to 'New Question', new_survey_question_path(survey_id: @survey_id), form_class: "new_question_button", method: :get%>
+<div id = "finished">
+<%=button_to 'Finished?', user_path(@user), method: :get%>
+</div>

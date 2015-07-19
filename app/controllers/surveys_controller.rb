@@ -4,6 +4,7 @@ class SurveysController < ApplicationController
   end
   
   def new
+    @user = User.find_by(id: session[:user_id])
     @survey = Survey.new
     @survey_id = session[:survey_id] ||= 1
   end
