@@ -22,7 +22,7 @@ class UsersController < ApplicationController
     @user = User.find_by(id: params[:id])
     @username = @user.username
     @surveys = @user.surveys
-    @taken_surveys = @user.takensurveys
+    @taken_surveys = @user.taken_surveys
   end
 
   private
