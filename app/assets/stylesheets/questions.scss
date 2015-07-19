@@ -21,10 +21,13 @@
 .show_question, .edit_question {
   padding:10px;
   border-bottom:1px solid $almost-black;
-  &:last-child{
-    border-bottom:none;
-  }
+
+
   h3.title {
     font-weight:900;
   }
+}
+
+.show_question:last-child, .edit_question:last-child{
+  border-bottom:none;
 }

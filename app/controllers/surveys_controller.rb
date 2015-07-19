@@ -15,7 +15,6 @@ class SurveysController < ApplicationController
       session[:survey_id] = @survey.id
       request.xhr? ? render(partial: 'survey', object: @survey, layout: false) : redirect_to(@survey)
     else
-      # flash.now[:error] = @survey.errors.full_messages
       flash[:error] = "Title required"
       redirect_to new_survey_path
     end
