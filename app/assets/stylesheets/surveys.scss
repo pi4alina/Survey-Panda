@@ -18,3 +18,14 @@
     width:100%;
   }
 }
+
+.edit_survey {
+  .delete a{
+    float:right;
+    display:block;
+    padding:5px;
+    background-color: $danger-background;
+    color:$danger-text;
+    font-weight:900;
+  }
+}

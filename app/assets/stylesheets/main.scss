@@ -42,5 +42,7 @@ input[type='submit'] {
 }
 
 .errors {
-
+    background-color: $danger-background;
+    color:$danger-text;
+    font-weight:900;
 }
