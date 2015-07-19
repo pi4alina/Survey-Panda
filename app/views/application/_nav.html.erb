@@ -1,0 +1,17 @@
+<nav>
+<div class="left">
+<%= link_to "Survey Panda", root_path, class: "home" %>
+</div>
+<div class="right">
+
+  <%if session[:user_id]%>
+  <div class="create">
+    <%= link_to 'Create New Survey', new_survey_path %>
+    </div>
+    <div class="logout">
+    <%=button_to 'Log Out', logout_path, method: :delete%>
+    </div>
+  <% end %>
+  <%#= render 'auth' %>
+</div>
+</nav>

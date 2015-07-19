@@ -1,6 +1,9 @@
 class SessionsController < ApplicationController
 
   def new
+    if request.xhr? 
+      render partial: 'new', layout: false
+    end
   end
 
   def create

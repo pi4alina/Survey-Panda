@@ -8,10 +8,17 @@
 
 </head>
 <body>
-<% if flash[:error]%>
-  <%= flash[:error]%>
-<% end %>
-<%= yield %>
+
+  <%=render 'nav'%>
+<div id="container">
+
+  <div id="content">
+  <% if flash[:error]%>
+    <%= flash[:error]%>
+  <% end %>
+  <%= yield %>
+  </div>
+</div>
 
 </body>
 </html>
