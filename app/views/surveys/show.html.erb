@@ -13,5 +13,6 @@
 	<% end %>
 	<div><%= link_to "Delete this survey", @survey, method: :delete%></div>
 <% else %>
-	<%= link_to "Start this survey", url: '/surveys/#{@survey.id}/questions/#{@survey.questions.first.id}'%>
+	<%#= link_to "Start this survey", url: '/surveys/#{@survey.id}/questions/#{@survey.questions.first.id}'%>
+	 <div id="question"><%=button_to 'Take Survey', survey_question_path(@survey, @survey.questions.first), form_class: "next_question_button", method: :get %></div>
 <% end %>

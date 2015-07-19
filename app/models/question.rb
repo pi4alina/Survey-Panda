@@ -10,7 +10,6 @@ class Question < ActiveRecord::Base
   def possible_values_to_array
     self.possible_values.split(",").map(&:strip)
   end
-
   
   def next  
     survey.questions.where("id > ?", id).first

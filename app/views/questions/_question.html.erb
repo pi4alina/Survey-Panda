@@ -1,0 +1,17 @@
+<div class="question" id="<%=question.id %>">
+  <h1><%= question.name %></h1>
+    <%= form_tag responses_path do %>
+    <ol>
+    <%= hidden_field_tag :question_id, question.id %>
+    <%= fields_for :response do |r| %>
+      <% question.possible_values_to_array.each do |choice|%>
+      <li>
+          <%= r.radio_button :content, choice%>
+          <%= label_tag :content, choice, value: choice%>
+      </li>
+      <%end%>
+      </ol>
+    <% end %>
+    <%= submit_tag (question == question.survey.questions.last ? "Finish Survey" : "Next Question"), class: "next_question_button" %>
+  <% end %>
+</div> 
