@@ -1,0 +1,6 @@
+.survey {
+  padding: 5px;
+  &:nth-child(odd) {
+    background-color:#ccc;
+  }
+}

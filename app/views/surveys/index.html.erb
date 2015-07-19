@@ -1,5 +1,4 @@
-<h2>Here are the surveys you can take: </h2>
-
+<h1>Take a survey!</h1>
 <% @surveys.each do |survey| %>
-  <div><%= link_to survey.title, survey_path(survey)%>  by<%= survey.author.username %></div>
+  <div class="survey"><%= link_to survey.title, survey_path(survey)%> [by <%= survey.author.username %>]</div>
 <% end %>
