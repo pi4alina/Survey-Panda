@@ -22,6 +22,6 @@ class Question < ActiveRecord::Base
     else
       total_responses_with_choice = 0
     end
-    (total_responses_with_choice * 100).to_s + "%"
+    (total_responses_with_choice * 100).round(2).to_s + "%"
 	end
 end
