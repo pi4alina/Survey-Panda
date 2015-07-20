@@ -16,6 +16,12 @@ class Question < ActiveRecord::Base
   end
 
 	def percentage(choice)
-		(self.responses.where(content: choice).count / self.responses.count * 100).to_s + "%"
+    total_responses = self.responses.count.to_f
+    if total_responses > 0
+		  total_responses_with_choice = self.responses.where(content: choice).count.to_f / total_responses
+    else
+      total_responses_with_choice = 0
+    end
+    (total_responses_with_choice * 100).to_s + "%"
 	end
 end
