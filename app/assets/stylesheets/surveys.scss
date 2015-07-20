@@ -29,3 +29,20 @@
     font-weight:900;
   }
 }
+
+.survey_results {
+  h3.title {
+    font-weight:900;
+  }
+  li {
+    display:flex;
+
+    div {
+      padding:10px 5px;
+    }
+    .choice {
+      font-weight:900;
+      text-transform:uppercase;
+    }
+  }
+}
