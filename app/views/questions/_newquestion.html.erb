@@ -1,5 +1,5 @@
-<div id = "<%=question.id%>">
-<%= question.name %>
+<div class="show_question" id="<%=question.id%>">
+<h3 class="title"><%= question.name %></h3>
 <ul>
 <% question.possible_values_to_array.each do |choice| %>
   <li><%= choice %></li>

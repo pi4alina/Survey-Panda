@@ -1,9 +1,5 @@
 <h1>Edit question</h1>
 
-<% flash.each do |key, value| %>
-  <div class="flash <%= key %>"><%= value %></div>
-<% end %>
-
 <%= form_tag survey_question_path(@survey, @question), method: :put do %>
   <div class='question'>
     <%= label_tag 'Question'%>

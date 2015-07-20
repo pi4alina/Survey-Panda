@@ -1,0 +1,48 @@
+@import 'base';
+
+.survey {
+  padding: 5px;
+  &:nth-child(odd) {
+    background-color:#ccc;
+  }
+}
+
+#new_survey_div {
+  div {
+    padding:10px;
+  }
+  label {
+    font-weight:bold;
+  }
+  input[type='text'], textarea {
+    width:100%;
+  }
+}
+
+.edit_survey {
+  .delete a{
+    float:right;
+    display:block;
+    padding:5px;
+    background-color: $danger-background;
+    color:$danger-text;
+    font-weight:900;
+  }
+}
+
+.survey_results {
+  h3.title {
+    font-weight:900;
+  }
+  li {
+    display:flex;
+
+    div {
+      padding:10px 5px;
+    }
+    .choice {
+      font-weight:900;
+      text-transform:uppercase;
+    }
+  }
+}

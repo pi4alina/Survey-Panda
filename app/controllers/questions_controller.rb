@@ -16,7 +16,7 @@ class QuestionsController < ApplicationController
     if question.save
       @last_question = @survey.questions.last
       request.xhr? ? render(partial: 'newquestion', locals: {question: @last_question, survey: @survey}, layout: false) : redirect_to(@survey)
-      flash[:success] = "Your question '#{question.name}' was successfully added!"
+      flash[:notice] = "Your question '#{question.name}' was successfully added!"
     else
       flash[:error] = "There was an error adding your question"
       redirect_to new_survey_path
@@ -44,11 +44,11 @@ class QuestionsController < ApplicationController
     update_possible_values(question, params[:possible_values])
 
     if question.save
-      flash[:success] = "Question updated!"
+      flash[:notice] = "Question updated!"
     else
       flash[:error] = "There was an error editing your question"
     end
-      redirect_to survey_question_path(question.survey, question)
+      redirect_to survey_path(question.survey)
   end
 
   def destroy

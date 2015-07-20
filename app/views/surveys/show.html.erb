@@ -2,17 +2,22 @@
 <h3><%= @survey.description%></h3>
 
 <% if authorized?(@survey) %>
-	<% @survey.questions.each do |question| %>
-		<%= question.name %>
-		<ul>
-		<% question.possible_values_to_array.each do |choice| %>
-			<li><%= choice %></li>
-		<% end %>
-		</ul>
-		<%= link_to "Edit this question", edit_survey_question_path(@survey, question)%>
-	<% end %>
-	<div><%= link_to "Delete this survey", @survey, method: :delete%></div>
+	<div class="edit_survey">
+		<% @survey.questions.each do |question| %>
+			<div class="edit_question">
+				<h3 class="title"><%= question.name %></h3>
+				<ul>
+				<% question.possible_values_to_array.each do |choice| %>
+					<li><%= choice %></li>
+				<% end %>
+				</ul>
+				<%= link_to "Edit this question", edit_survey_question_path(@survey, question)%>
+			</div>
+			<% end %>
+		<div class="delete"><%= link_to "Delete this survey", @survey, method: :delete%></div>
+	</div>
+
+
 <% else %>
-	<%#= link_to "Start this survey", url: '/surveys/#{@survey.id}/questions/#{@survey.questions.first.id}'%>
 	 <div id="question"><%=button_to 'Take Survey', survey_question_path(@survey, @survey.questions.first), form_class: "next_question_button", method: :get %></div>
 <% end %>

@@ -1,4 +1,4 @@
-@import 'main';
+@import 'base';
 
 nav {
   background-color: $almost-black-transparent;
@@ -8,15 +8,16 @@ nav {
 
   a {
     color: $background-color;
-  }
-  a:hover {
+    &:hover {
     color: $link-color;
+    }
   }
+  
 
   .left {
     float:left;
     width:auto;
-    min-width:75%;
+    min-width:70%;
   }
 
   .right {

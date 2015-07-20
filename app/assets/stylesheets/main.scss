@@ -1,8 +1,4 @@
-@import 'base/normalize.css';
-@import 'base/globals.scss';
-@import 'base/fonts.scss';
-
-
+@import 'base';
 
 body {
   font-family: $main-font;
@@ -24,4 +20,30 @@ body {
 a {
   text-decoration: none;
   color: $link-color;
+}
+
+input[type='submit'] {
+  background-color:$accent-color;
+  border:0;
+
+  &:hover {
+    background-color: $link-color;
+  }
+}
+
+.flash div{
+  display:block;
+  font-weight:900;
+}
+
+.notice {
+  background-color: $success-background;
+  color:$success-text;
+  padding:10px;
+}
+
+.error {
+  background-color: $danger-background;
+  color:$danger-text;
+  padding:10px;
 }

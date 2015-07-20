@@ -1,8 +1,4 @@
 <div id= "new_question_div">
-  <% flash.each do |key, value| %>
-    <div class="flash <%= key %>"><%= value %></div>
-  <% end %>
-
   <%= form_tag survey_questions_path, class: "new_question_form", method: :post do %>
     <div class='question'>
       <%= label_tag 'Question'%>
@@ -10,9 +6,9 @@
     </div>
     <div class='question possible_values'>
     <%= label_tag 'Possible Values'%>
-      <%= text_field_tag 'possible_values[]' %>
-      <%= text_field_tag 'possible_values[]' %>
-      <%= text_field_tag 'possible_values[]' %>
+      <% 3.times do %>
+      <div class="possible_value"><%= text_field_tag 'possible_values[]' %></div>
+      <% end %>
     </div>
     <%= submit_tag 'Add Question' %>
   <% end %>

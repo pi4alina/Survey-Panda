@@ -1,15 +1,19 @@
-<h2><%=@username%>'s profile page</h2>
+<h1><%=@username%>'s profile page</h1>
 
-<h4>List of <%=@username%>'s created surveys:</h4>
-<ol>
-<% @surveys.each do |survey|%>
-  <li><%=link_to survey.title, survey_result_path(survey)%></li>
-<%end%>
-</ol>
+<h3><%=@username%>'s created surveys:</h3>
+<%unless @surveys.empty?%>
+  <% @surveys.each do |survey|%>
+    <div class="survey"><%=link_to survey.title, survey_result_path(survey)%></div>
+  <%end%>
+  <%else %>
+  <div class="no_surveys">You haven't created a survey! Why don't you <%=link_to "create a survey", new_survey_path(@user) %>? </div>
+<% end %>
 
-<h4>List of <%=@username%>'s taken surveys:</h4>
-<ol>
+<h3><%=@username%>'s taken surveys:</h3>
+<%unless @taken_surveys.empty? %>
 <% @taken_surveys.each do |taken_survey|%>
-  <li><%= taken_survey.survey.title%></li>
+  <div class="survey"><%=taken_survey.survey.title%></div>
 <%end%>
-</ol>
+<% else %>
+  <div class="no_surveys">You haven't taken a survey! Why don't you <%=link_to "take a survey", surveys_path %>? </div>
+<% end %>

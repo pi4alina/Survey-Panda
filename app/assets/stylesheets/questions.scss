@@ -1,0 +1,33 @@
+@import 'base';
+
+#questions_div {
+  div {
+    padding:5px;
+  }
+  label {
+   font-weight:bold;
+  }
+
+  .question {
+    label {
+      padding-bottom:3px;
+    }
+    input[type='text']{
+      width:100%;
+    }
+  }
+}
+
+.show_question, .edit_question {
+  padding:10px;
+  border-bottom:1px solid $almost-black;
+
+
+  h3.title {
+    font-weight:900;
+  }
+}
+
+.show_question:last-child, .edit_question:last-child{
+  border-bottom:none;
+}

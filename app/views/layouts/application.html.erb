@@ -11,12 +11,9 @@
 
   <%=render 'nav'%>
 <div id="container">
-
   <div id="content">
-  <% if flash[:error]%>
-    <%= flash[:error]%>
-  <% end %>
-  <%= yield %>
+    <%=render 'flash'%>
+    <%= yield %>
   </div>
 </div>
 
